@@ -13,11 +13,22 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   final weatherService = WeatherService();
 
+
+
   WeatherBloc() : super(WeatherBlocInitial()) {
     on<FetchWeather>((event, emit) async {
       emit(WeatherBlocLoading());
       try {
+
+        final apiKey = dotenv.env['OPENWEATHER_KEY'];
+        if (apiKey == null || apiKey.isEmpty) {
+          print("API key chưa được load hoặc null!");
+        } else {
+          print("API key loaded, độ dài: ${apiKey.length}");
+        }
+
         WeatherFactory wf = WeatherFactory(dotenv.env['OPENWEATHER_KEY']!, language: Language.ENGLISH);
+
 
         Weather weather = await wf.currentWeatherByLocation(
           event.position.latitude,

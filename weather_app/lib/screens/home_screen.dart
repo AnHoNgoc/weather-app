@@ -35,6 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  String _getGreeting() {
+    final hour = DateTime.now().hour;
+    if (hour < 12) return 'Good Morning';
+    if (hour < 18) return 'Good Afternoon';
+    return 'Good Evening';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: 300.w,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xFF673AB7),
+                    color: Color(0xFF90A4AE),
                   ),
                 ),
               ),
@@ -83,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 300.h,
                   width: 600.w,
                   decoration: const BoxDecoration(
-                    color: Color(0xFFFFAB40),
+                    color: Color(0xFF64B5F6),
                   ),
                 ),
               ),
@@ -110,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           // Location
                           Text(
-                            '📍 ${state.weather.areaName}',
+                            '🏙️ ${state.weather.areaName}',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w300,
@@ -118,22 +125,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
 
-                          SizedBox(height: 8.h),
+                          SizedBox(height: 10.h),
 
                           // Welcome
                           Text(
-                            'Good Morning',
+                            _getGreeting(),
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 25.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-
+                          SizedBox(height: 10.h),
                           // Weather Icon
                           getWeatherIcon(state.weather.weatherConditionCode!),
 
-                          // Temperature
+                          SizedBox(height: 10.h),
                           Center(
                             child: Text(
                               '${state.weather.temperature!.celsius!.round()}°C',
@@ -171,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
 
-                          SizedBox(height: 30.h),
+                          SizedBox(height: 60.h),
 
                           // SUNRISE - SUNSET
                           Row(
@@ -277,20 +284,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                         crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                         children: [
-                                          const Text(
-                                            'Temp Max',
+                                          Text(
+                                            'Max',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w300,
+                                              fontSize: 14.sp,   // ✅ responsive
                                             ),
                                           ),
                                           SizedBox(height: 3.h),
                                           Text(
                                             "${state.weather.tempMax!.celsius!.round()} °C",
                                             overflow: TextOverflow.ellipsis,
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
+                                              fontSize: 15.sp,   // ✅ responsive
                                             ),
                                           ),
                                         ],
@@ -311,20 +320,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                         crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                         children: [
-                                          const Text(
-                                            'Temp Min',
+                                          Text(
+                                            'Min',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w300,
+                                              fontSize: 14.sp,   // ✅ thêm .sp
                                             ),
                                           ),
                                           SizedBox(height: 3.h),
                                           Text(
                                             "${state.weather.tempMin!.celsius!.round()} °C",
                                             overflow: TextOverflow.ellipsis,
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
+                                              fontSize: 15.sp,   // ✅ thêm .sp
                                             ),
                                           ),
                                         ],
@@ -349,8 +360,8 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: Builder(
         builder: (ctx) {
           return FloatingActionButton(
-            backgroundColor: Colors.deepPurple.shade700, // sâu hơn, đồng bộ với theme
-            foregroundColor: Colors.white, // icon nổi bật trên nền tím
+            backgroundColor: Colors.deepPurple.shade700,
+            foregroundColor: Colors.white,
             child: const Icon(Icons.edit_location),
             onPressed: () {
               showDialog(
@@ -359,19 +370,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   String cityName = '';
 
                   return AlertDialog(
-                    backgroundColor: Colors.grey.shade900, // dark theme, dễ nhìn
-                    title: const Text(
+                    backgroundColor: Colors.grey.shade900,
+                    title: Text(
                       'Enter city name',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
+                        fontSize: 16.sp,
                       ),
                     ),
                     content: TextField(
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.sp,
+                      ),
                       decoration: InputDecoration(
                         hintText: 'e.g., Hanoi',
-                        hintStyle: TextStyle(color: Colors.grey.shade400),
+                        hintStyle: TextStyle(
+                          color: Colors.grey.shade400,
+                          fontSize: 13.sp,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey.shade700),
                           borderRadius: BorderRadius.circular(8),
@@ -392,23 +410,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(dialogContext),
-                        child: const Text(
+                        child: Text(
                           'Cancel',
-                          style: TextStyle(color: Colors.redAccent),
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                            fontSize: 14.sp,
+                          ),
                         ),
                       ),
                       TextButton(
                         onPressed: () {
                           if (cityName.isNotEmpty) {
-                            ctx
-                                .read<WeatherBloc>()
-                                .add(FetchWeatherByCity(cityName));
+                            ctx.read<WeatherBloc>().add(
+                              FetchWeatherByCity(cityName),
+                            );
                           }
                           Navigator.pop(dialogContext);
                         },
-                        child: const Text(
+                        child: Text(
                           'Confirm',
-                          style: TextStyle(color: Colors.lightGreenAccent),
+                          style: TextStyle(
+                            color: Colors.lightGreenAccent,
+                            fontSize: 14.sp,
+                          ),
                         ),
                       ),
                     ],
