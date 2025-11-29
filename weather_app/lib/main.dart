@@ -9,20 +9,15 @@ import 'package:weather_app/services/location_service.dart';
 
 import 'bloc/weather_bloc.dart';
 
-Future<void> main() async  {
-
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
   await dotenv.load(fileName: ".env");
-  runApp(
-    BlocProvider(
-      create: (_) => WeatherBloc(),
-      child: const MyApp(),
-    ),
-  );;
+  runApp(BlocProvider(create: (_) => WeatherBloc(), child: const MyApp()));
+  ;
 }
 
 class MyApp extends StatelessWidget {
@@ -46,29 +41,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeWrapper extends StatelessWidget {
+class HomeWrapper extends StatefulWidget {
   const HomeWrapper({super.key});
 
   @override
+  State<HomeWrapper> createState() => _HomeWrapperState();
+}
+
+class _HomeWrapperState extends State<HomeWrapper> {
+  bool dispatched = false;
+
+  @override
   Widget build(BuildContext context) {
-    return FutureBuilder<Position>(
+    return FutureBuilder<Position?>(
       future: LocationService.determinePosition(),
       builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          context.read<WeatherBloc>().add(FetchWeather(snapshot.data!));
-          return const HomeScreen();
-        } else if (snapshot.hasError) {
-          return Scaffold(
-            body: Center(child: Text('${snapshot.error}')),
-          );
-        } else {
+        if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );
         }
+
+        final bool usingDefault = snapshot.data == null;
+
+        if (!dispatched) {
+          if (usingDefault) {
+            context.read<WeatherBloc>().add(FetchWeatherByCity("Hanoi"));
+          } else {
+            context.read<WeatherBloc>().add(FetchWeather(snapshot.data!));
+          }
+          dispatched = true;
+        }
+
+        return HomeScreen(usingDefaultLocation: usingDefault);
       },
     );
   }
 }
-
-

@@ -25,10 +25,12 @@ export default function Home() {
             <div className="max-w-3xl text-center text-blue-800">
                 <h2 className="text-2xl font-semibold mb-6">Key Features</h2>
                 <ul className="list-disc list-inside space-y-3 text-left mx-auto max-w-md">
-                    <li>Hourly and daily weather forecasts.</li>
-                    <li>Interactive temperature and precipitation maps.</li>
-                    <li>Alerts for severe weather conditions.</li>
-                    <li>User-friendly interface for both mobile and desktop.</li>
+                    <li>Displays current temperature in Celsius</li>
+                    <li>Shows current weather condition (sunny, cloudy, rainy, etc.).</li>
+                    <li>Real-time updates for accurate weather information.</li>
+                    <li>User-friendly interface optimized for both mobile and desktop.</li>
+                    <li>Optional location access for automatically detecting your area.</li>
+                    <li>Manual city search available if location permission is not granted.</li>
                 </ul>
             </div>
         </div>

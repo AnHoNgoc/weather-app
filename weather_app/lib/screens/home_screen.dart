@@ -8,13 +8,23 @@ import 'package:intl/intl.dart';
 import 'package:weather_app/bloc/weather_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final bool usingDefaultLocation;
+
+  const HomeScreen({super.key, required this.usingDefaultLocation});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late bool usingDefaultLocation;
+
+  @override
+  void initState() {
+    super.initState();
+    usingDefaultLocation = widget.usingDefaultLocation;
+  }
+
   Widget getWeatherIcon(int code) {
     if (code >= 200 && code < 300) {
       return Image.asset('assets/img/1.png', width: 100.w, height: 100.h);
@@ -89,9 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   height: 300.h,
                   width: 600.w,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF64B5F6),
-                  ),
+                  decoration: const BoxDecoration(color: Color(0xFF64B5F6)),
                 ),
               ),
 
@@ -115,6 +123,35 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          if (usingDefaultLocation)
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(8.w),
+                              margin: EdgeInsets.only(bottom: 8.h),
+                              decoration: BoxDecoration(
+                                color: Colors.orange.withOpacity(0.25),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    Icons.location_off,
+                                    color: Colors.orange,
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Expanded(
+                                    child: Text(
+                                      "Using default location: Hanoi",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp, // responsive text size
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           // Location
                           Text(
                             '🏙️ ${state.weather.areaName}',
@@ -167,9 +204,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
                           Center(
                             child: Text(
-                              DateFormat('EEEE dd •').add_jm().format(
-                                state.weather.date!.toLocal(),
-                              ),
+                              DateFormat(
+                                'EEEE dd •',
+                              ).add_jm().format(state.weather.date!.toLocal()),
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -193,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Sunrise',
@@ -205,10 +242,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           SizedBox(height: 3.h),
                                           Text(
-                                            DateFormat()
-                                                .add_jm()
-                                                .format(state.weather.sunrise!
-                                                .toLocal()),
+                                            DateFormat().add_jm().format(
+                                              state.weather.sunrise!.toLocal(),
+                                            ),
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
                                               color: Colors.white,
@@ -232,7 +268,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Sunset',
@@ -244,10 +280,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           SizedBox(height: 3.h),
                                           Text(
-                                            DateFormat()
-                                                .add_jm()
-                                                .format(state.weather.sunset!
-                                                .toLocal()),
+                                            DateFormat().add_jm().format(
+                                              state.weather.sunset!.toLocal(),
+                                            ),
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
                                               color: Colors.white,
@@ -282,14 +317,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Max',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w300,
-                                              fontSize: 14.sp,   // ✅ responsive
+                                              fontSize: 14.sp, // ✅ responsive
                                             ),
                                           ),
                                           SizedBox(height: 3.h),
@@ -299,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 15.sp,   // ✅ responsive
+                                              fontSize: 15.sp, // ✅ responsive
                                             ),
                                           ),
                                         ],
@@ -318,14 +353,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Min',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w300,
-                                              fontSize: 14.sp,   // ✅ thêm .sp
+                                              fontSize: 14.sp, // ✅ thêm .sp
                                             ),
                                           ),
                                           SizedBox(height: 3.h),
@@ -335,7 +370,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 15.sp,   // ✅ thêm .sp
+                                              fontSize: 15.sp, // ✅ thêm .sp
                                             ),
                                           ),
                                         ],
@@ -380,10 +415,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     content: TextField(
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14.sp,
-                      ),
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp),
                       decoration: InputDecoration(
                         hintText: 'e.g., Hanoi',
                         hintStyle: TextStyle(
@@ -395,7 +427,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepPurple.shade400),
+                          borderSide: BorderSide(
+                            color: Colors.deepPurple.shade400,
+                          ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         filled: true,
@@ -424,6 +458,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             ctx.read<WeatherBloc>().add(
                               FetchWeatherByCity(cityName),
                             );
+                            setState(() {
+                              usingDefaultLocation = false;
+                            });
                           }
                           Navigator.pop(dialogContext);
                         },
