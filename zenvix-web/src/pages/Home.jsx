@@ -4,12 +4,12 @@ export default function Home() {
 
             {/* Title */}
             <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4 text-center">
-                Zenvix Music
+                Zenvix App
             </h1>
 
             {/* Description */}
             <p className="text-center text-blue-800 max-w-xl mb-12">
-                Enjoy your favorite music anytime with Zenvix Music. Play songs stored locally on your device,
+                Enjoy your favorite music anytime with Zenvix App. Play songs stored locally on your device,
                 no internet connection or account required.
             </p>
 

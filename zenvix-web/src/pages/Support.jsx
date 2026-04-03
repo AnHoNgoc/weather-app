@@ -5,13 +5,13 @@ export default function Support() {
 
                 {/* Title */}
                 <h1 className="text-4xl font-bold text-blue-900 mb-8 text-center">
-                    Zenvix Music Support
+                    Zenvix App Support
                 </h1>
 
                 {/* Introduction */}
                 <section className="mb-6">
                     <p className="text-blue-800 leading-relaxed">
-                        Welcome to the Zenvix Music support page. This app allows you to listen to music
+                        Welcome to the Zenvix App support page. This app allows you to listen to music
                         stored locally on your device without requiring an internet connection.
                     </p>
                 </section>
