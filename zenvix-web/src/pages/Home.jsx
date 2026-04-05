@@ -9,8 +9,7 @@ export default function Home() {
 
             {/* Description */}
             <p className="text-center text-blue-800 max-w-xl mb-12">
-                Enjoy your favorite music anytime with Zenvix App. Play songs stored locally on your device,
-                no internet connection or account required.
+                Stream your favorite music anytime with Zenvix App. Discover, search, and enjoy songs online with a smooth and modern listening experience.
             </p>
 
             {/* Features */}
@@ -18,38 +17,38 @@ export default function Home() {
 
                 {/* Feature 1 */}
                 <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-                    <h3 className="text-xl font-semibold mb-2">Play Music</h3>
-                    <p>Listen to your favorite songs directly from your device with smooth playback.</p>
+                    <h3 className="text-xl font-semibold mb-2">Online Music Streaming</h3>
+                    <p>Listen to a wide range of songs online with fast and seamless playback.</p>
                 </div>
 
                 {/* Feature 2 */}
                 <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-                    <h3 className="text-xl font-semibold mb-2">Local Library</h3>
-                    <p>Automatically scan and display music files stored on your device.</p>
+                    <h3 className="text-xl font-semibold mb-2">Search Songs</h3>
+                    <p>Quickly find your favorite songs with powerful search.</p>
                 </div>
 
                 {/* Feature 3 */}
                 <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-                    <h3 className="text-xl font-semibold mb-2">Offline Mode</h3>
-                    <p>Enjoy music anytime without needing an internet connection.</p>
+                    <h3 className="text-xl font-semibold mb-2">Shuffle Play</h3>
+                    <p>Enjoy your music in random order with the shuffle feature.</p>
                 </div>
 
                 {/* Feature 4 */}
                 <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-                    <h3 className="text-xl font-semibold mb-2">Simple Controls</h3>
-                    <p>Play, pause, skip tracks easily with intuitive controls.</p>
+                    <h3 className="text-xl font-semibold mb-2">Repeat Mode</h3>
+                    <p>Repeat your favorite songs or playlists with flexible repeat options.</p>
                 </div>
 
                 {/* Feature 5 */}
                 <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-                    <h3 className="text-xl font-semibold mb-2">Lightweight & Fast</h3>
-                    <p>Optimized for performance with fast loading and smooth experience.</p>
+                    <h3 className="text-xl font-semibold mb-2">Favorites</h3>
+                    <p>Save songs you love to your personal favorites list for quick access.</p>
                 </div>
 
                 {/* Feature 6 */}
                 <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-                    <h3 className="text-xl font-semibold mb-2">No Account Needed</h3>
-                    <p>Start listening instantly without signing up or logging in.</p>
+                    <h3 className="text-xl font-semibold mb-2">Modern & Smooth UI</h3>
+                    <p>Enjoy a clean, fast, and user-friendly interface designed for the best experience.</p>
                 </div>
 
             </div>

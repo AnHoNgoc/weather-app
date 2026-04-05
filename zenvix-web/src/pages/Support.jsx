@@ -11,8 +11,9 @@ export default function Support() {
                 {/* Introduction */}
                 <section className="mb-6">
                     <p className="text-blue-800 leading-relaxed">
-                        Welcome to the Zenvix App support page. This app allows you to listen to music
-                        stored locally on your device without requiring an internet connection.
+                        Welcome to the Zenvix App support page. Zenvix is an online music streaming app
+                        that allows you to discover, search, and enjoy your favorite songs anytime with
+                        a smooth listening experience.
                     </p>
                 </section>
 
@@ -22,21 +23,21 @@ export default function Support() {
                         1. Playing Music
                     </h2>
                     <ul className="list-disc list-inside text-blue-800 space-y-1">
-                        <li>Open the app to view your music library.</li>
-                        <li>Tap any song to start playing.</li>
-                        <li>Use controls to pause, play, or skip tracks.</li>
+                        <li>Browse or search for songs in the app.</li>
+                        <li>Tap any song to start streaming instantly.</li>
+                        <li>Use the player controls to manage playback.</li>
                     </ul>
                 </section>
 
-                {/* Music Library */}
+                {/* Search */}
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold text-blue-900 mb-3">
-                        2. Music Library
+                        2. Search Music
                     </h2>
                     <ul className="list-disc list-inside text-blue-800 space-y-1">
-                        <li>The app automatically reads music files from your device.</li>
-                        <li>You can browse songs by folder or list.</li>
-                        <li>Only audio files stored locally are displayed.</li>
+                        <li>Use the search bar to find songs, artists.</li>
+                        <li>Results update quickly as you type.</li>
+                        <li>Select any result to start playing.</li>
                     </ul>
                 </section>
 
@@ -47,42 +48,60 @@ export default function Support() {
                     </h2>
                     <ul className="list-disc list-inside text-blue-800 space-y-1">
                         <li>Play / Pause music anytime.</li>
-                        <li>Skip to next or previous song.</li>
-                        <li>Adjust volume using your device controls.</li>
+                        <li>Skip to next or previous track.</li>
+                        <li>Shuffle songs for a random listening experience.</li>
+                        <li>Repeat a single track or entire playlist.</li>
                     </ul>
                 </section>
 
-                {/* Offline Usage */}
+                {/* Favorites */}
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold text-blue-900 mb-3">
-                        4. Offline Usage
+                        4. Favorites
+                    </h2>
+                    <ul className="list-disc list-inside text-blue-800 space-y-1">
+                        <li>Add songs to your Favorites list.</li>
+                        <li>Access your favorite songs quickly anytime.</li>
+                        <li>Manage and remove songs from Favorites بسهولة.</li>
+                    </ul>
+                </section>
+
+                {/* Online Usage */}
+                <section className="mb-6">
+                    <h2 className="text-2xl font-semibold text-blue-900 mb-3">
+                        5. Internet Requirement
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        Zenvix Music works completely offline. No internet connection is required to play your music.
+                        Zenvix requires an internet connection to stream music. Make sure you are connected
+                        to Wi-Fi or mobile data for the best experience.
                     </p>
                 </section>
 
                 {/* FAQ */}
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold text-blue-900 mb-3">
-                        5. Frequently Asked Questions
+                        6. Frequently Asked Questions
                     </h2>
                     <div className="text-blue-800 leading-relaxed space-y-3">
                         <div>
                             <p><strong>Q: Do I need internet to use the app?</strong></p>
-                            <p>A: No, the app works fully offline.</p>
+                            <p>A: Yes, the app streams music online and requires an internet connection.</p>
                         </div>
                         <div>
-                            <p><strong>Q: Where are my songs stored?</strong></p>
-                            <p>A: All songs are stored on your device.</p>
+                            <p><strong>Q: Can I search for songs?</strong></p>
+                            <p>A: Yes, you can search by song name, artist, or album.</p>
+                        </div>
+                        <div>
+                            <p><strong>Q: How do I shuffle music?</strong></p>
+                            <p>A: Use the shuffle button in the player to play songs randomly.</p>
+                        </div>
+                        <div>
+                            <p><strong>Q: How do I repeat a song?</strong></p>
+                            <p>A: Use the repeat button to loop a track or playlist.</p>
                         </div>
                         <div>
                             <p><strong>Q: Does the app collect my data?</strong></p>
-                            <p>A: No, we do not collect or track any personal data.</p>
-                        </div>
-                        <div>
-                            <p><strong>Q: Why can't I see my songs?</strong></p>
-                            <p>A: Please make sure you have granted file access permission to the app.</p>
+                            <p>A: No, we do not collect or track personal data.</p>
                         </div>
                     </div>
                 </section>
@@ -90,7 +109,7 @@ export default function Support() {
                 {/* Contact Support */}
                 <section>
                     <h2 className="text-2xl font-semibold text-blue-900 mb-3">
-                        6. Contact Support
+                        7. Contact Support
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
                         If you have questions or issues, please contact us at{" "}

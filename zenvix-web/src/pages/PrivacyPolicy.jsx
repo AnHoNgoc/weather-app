@@ -11,9 +11,9 @@ export default function PrivacyPolicy() {
                 {/* Introduction */}
                 <section className="mb-6">
                     <p className="text-blue-800 leading-relaxed">
-                        Welcome to Zenvix Music. Your privacy is important to us. This app is designed
-                        to play music stored locally on your device and does not require an internet
-                        connection or user account.
+                        Welcome to Zenvix App. Your privacy is important to us. Zenvix is an online music
+                        streaming application that allows users to search, play, shuffle, repeat, and save
+                        favorite songs for a better listening experience.
                     </p>
                 </section>
 
@@ -23,37 +23,39 @@ export default function PrivacyPolicy() {
                         1. Information We Collect
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        Zenvix Music does NOT collect any personal information. We do not require login,
-                        and we do not collect or store any user data on external servers.
+                        Zenvix App may collect limited non-personal information necessary to provide music
+                        streaming features, improve app performance, and support the user experience. We do
+                        not require unnecessary personal information to use the app.
                     </p>
                 </section>
 
-                {/* Local Music Access */}
+                {/* Search and Favorites */}
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold text-blue-900 mb-3">
-                        2. Access to Local Files
+                        2. Search, Playback, and Favorites
                     </h2>
                     <p className="text-blue-800 leading-relaxed mb-2">
-                        The app may request permission to access music files stored on your device.
-                        This is required to:
+                        The app provides features such as:
                     </p>
                     <ul className="list-disc list-inside text-blue-800 space-y-1">
-                        <li>Display your music library</li>
-                        <li>Play audio files from your device</li>
+                        <li>Searching songs</li>
+                        <li>Streaming music online</li>
+                        <li>Shuffling and repeating songs</li>
+                        <li>Saving songs to your Favorites list</li>
                     </ul>
                     <p className="text-blue-800 mt-2">
-                        All music files remain on your device and are never uploaded or shared.
+                        These features are used only to improve your listening experience inside the app.
                     </p>
                 </section>
 
-                {/* Offline Usage */}
+                {/* Internet Usage */}
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold text-blue-900 mb-3">
-                        3. Offline Usage
+                        3. Internet Usage
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        Zenvix Music works completely offline. No internet connection is required,
-                        and the app does not communicate with any external servers.
+                        Zenvix App requires an internet connection to stream music and deliver online
+                        content. Network access is used only for app functionality and service availability.
                     </p>
                 </section>
 
@@ -63,7 +65,9 @@ export default function PrivacyPolicy() {
                         4. Third-Party Services
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        We do not use any third-party services for analytics, advertising, or tracking.
+                        The app may rely on third-party services or content providers to deliver music
+                        streaming functionality. These services may process limited technical data as needed
+                        to operate properly.
                     </p>
                 </section>
 
@@ -73,8 +77,8 @@ export default function PrivacyPolicy() {
                         5. Data Security
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        Since all data remains on your device, you have full control over your music
-                        and app usage. We do not store or transmit any user data.
+                        We take reasonable measures to protect user information and maintain app security.
+                        However, no online service can guarantee absolute security.
                     </p>
                 </section>
 
@@ -84,8 +88,8 @@ export default function PrivacyPolicy() {
                         6. Your Rights
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        You have full control over your music files on your device. You can add, delete,
-                        or manage your music at any time outside the app.
+                        You can manage your use of the app features, including search history, playback
+                        behavior, and your Favorites list, depending on the functionality available in the app.
                     </p>
                 </section>
 
@@ -95,8 +99,8 @@ export default function PrivacyPolicy() {
                         7. Policy Updates
                     </h2>
                     <p className="text-blue-800 leading-relaxed">
-                        We may update this Privacy Policy occasionally. Any changes will be reflected
-                        on this page.
+                        We may update this Privacy Policy from time to time. Any changes will be posted on
+                        this page with the updated content.
                     </p>
                 </section>
 
