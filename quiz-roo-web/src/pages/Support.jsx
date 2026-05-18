@@ -146,7 +146,7 @@ export default function QuizRooSupport() {
                             href="mailto:your@email.com"
                             className="text-purple-600 underline"
                         >
-                            your@email.com
+                            anhongoc1306@email.com
                         </a>
                     </p>
                 </section>

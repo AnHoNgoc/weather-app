@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
                             href="mailto:your@email.com"
                             className="text-purple-600 underline ml-1"
                         >
-                            your@email.com
+                            anhongoc1306@email.com
                         </a>
                     </p>
                 </section>
