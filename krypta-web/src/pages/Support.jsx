@@ -5,13 +5,13 @@ export default function KryptaSupport() {
 
                 {/* Title */}
                 <h1 className="text-4xl font-bold text-purple-900 mb-8 text-center">
-                    Krypta Support
+                    Krypta Nova Support
                 </h1>
 
                 {/* Introduction */}
                 <section className="mb-6">
                     <p className="text-purple-800 leading-relaxed">
-                        Welcome to Krypta Support. Krypta is a cryptocurrency
+                        Welcome to Krypta Nova Support. Krypta Nova is a cryptocurrency
                         tracking application that helps users monitor coin prices,
                         manage favorite coins, and stay updated with the latest
                         crypto news.

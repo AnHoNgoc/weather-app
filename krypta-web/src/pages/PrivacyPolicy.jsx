@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
                 {/* Introduction */}
                 <section className="mb-6">
                     <p className="text-purple-800 leading-relaxed">
-                        Welcome to Krypta App. Your privacy is important to us.
+                        Welcome to Krypta Nova App. Your privacy is important to us.
                         Krypta is a cryptocurrency tracking application that
                         allows users to monitor coin prices, manage favorite
                         cryptocurrencies, and read the latest crypto news.
